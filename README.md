@@ -10,8 +10,6 @@
 - [Obsługa błędów](#obsługa-błędów)
 - [Wsparcie techniczne](#wsparcie-techniczne)
 
-# Dokumentacja Integracji - System Autoryzacji iFrame
-
 ## Wstęp
 Dokument opisuje proces integracji i autoryzacji dostępu do iFrame poprzez system tokenów sesji. Rozwiązanie zapewnia bezpieczny dostęp tylko dla autoryzowanych użytkowników pochodzących ze strony klienta.
 
@@ -64,7 +62,6 @@ https://iframe-url-address?session_token=SESSION_TOKEN
 ### Przykład implementacji
 
 ```javascript
-// Przykład pobierania tokenu sesji
 async function getSessionToken() {
     const response = await fetch('https://europe-west3-memeo-health.cloudfunctions.net/getSessionId', {
         method: 'POST',
@@ -80,16 +77,16 @@ async function getSessionToken() {
     return data.token;
 }
 
-// Przykład tworzenia URL z tokenem
+
 function createIframeUrl(sessionToken) {
-    return `https://your-application-url?session_token=${sessionToken}`;
+    return `https://iframe-url-address?session_token=${sessionToken}`;
 }
 ```
 
 ### Bezpieczeństwo
 - Token klienta (clientToken) powinien być przechowywany w bezpieczny sposób
 - Każdy token sesji jest ważny tylko przez 1 godzinę
-- Tokeny są jednorazowe i unikalne
+- Tokeny są unikalne
 - Weryfikacja tokenu odbywa się po stronie aplikacji
 
 ### Obsługa błędów
@@ -99,9 +96,4 @@ function createIframeUrl(sessionToken) {
 
 ### Wsparcie techniczne
 W przypadku problemów z integracją prosimy o kontakt z zespołem wsparcia technicznego:
-[Dane kontaktowe do wsparcia technicznego]
-
-## Uwagi końcowe
-- Zalecane jest implementowanie mechanizmu odświeżania tokenu przed jego wygaśnięciem
-- Należy monitorować poprawność działania integracji
-- Regularne aktualizacje tokenu klienta zwiększają bezpieczeństwo systemu
+[Email Address](mailto:contact@vividmind.health)
