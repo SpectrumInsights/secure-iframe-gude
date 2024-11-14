@@ -55,7 +55,7 @@ https://iframe-url-address?session_token=SESSION_TOKEN
 ```
 
 ### Specyfikacja techniczna
-- Czas ważności tokenu: 1 godzina
+- Czas ważności tokenu: 1 godzina (do ustalenia dla klienta)
 - Format tokenu: JWT (JSON Web Token)
 - Wymagane nagłówki: Content-Type: application/json
 
